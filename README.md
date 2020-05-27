@@ -1,1 +1,8 @@
-# trackerpills-codificando-infra-tf-basico
+# Disclaimer :D
+
+Salve galera!
+
+Esse repositório arquivos base para alguns primeiros passos em Infra as Code usando o Terraform...
+Nesse caso o provider é AWS, mas poderia ser outro como Azure, GCP, VMWare, etc...
+
+Façam bom uso e contém comigo!
