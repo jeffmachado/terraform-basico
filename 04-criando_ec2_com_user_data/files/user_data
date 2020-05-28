@@ -1,9 +1,0 @@
-#cloud-config
-write_files:
-  - path: /etc/init.d/run_grafana
-    permissions: "0755"
-    owner: root
-    content: |
-      #!/bin/bash
-
-      docker run -d -p 3000:3000 grafana/grafana

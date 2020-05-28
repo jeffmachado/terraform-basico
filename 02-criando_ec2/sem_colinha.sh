@@ -1,7 +1,16 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install docker.io
+sudo apt install -y docker.io
+
+sudo update-rc.d custom_startup defaults
+sudo systemctl enable custom_startup
+
+sudo yum update -y
+sudo yum install -y docker
+sudo systemctl status docker
+sudo systemctl start docker
+sudo chmod +x /etc/rc.d/rc.local
 
 ### Ouuuu
 
@@ -20,4 +29,4 @@ sudo apt install docker.io
 # gnupg-agent \
 # software-properties-common \
 # docker-ce \
-containerd.io
+# containerd.io

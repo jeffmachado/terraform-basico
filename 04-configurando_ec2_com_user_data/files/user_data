@@ -1,0 +1,15 @@
+#cloud-config
+write_files:
+  - path: /etc/rc.local
+    permissions: "0755"
+    owner: root
+    content: |
+      #!/bin/bash
+
+      for i in {1..20}
+      do
+        docker info && break
+        sleep 1
+      done
+
+      sudo docker run -d -p 3000:3000 grafana/grafana
