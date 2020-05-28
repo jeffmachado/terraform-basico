@@ -1,10 +1,21 @@
 #cloud-config
 write_files:
-  - path: /etc/rc.local
+  - path: /etc/init.d/custom_startup
     permissions: "0755"
     owner: root
     content: |
-      #!/bin/bash
+      #!/bin/sh -
+      # Custom startup of applications
+      #
+      ### BEGIN INIT INFO
+      # Provides: Custom startup of applications
+      # Default-Start: 2 3 4 5
+      # Default-Stop: 0 1 6
+      # Required-Start: $network $remote_fs
+      # Required-Stop: $remote_fs $network
+      # Short-Description: That's  all folks
+      # Description: That's  all folks
+      ### END INIT INFO
 
       for i in {1..20}
       do

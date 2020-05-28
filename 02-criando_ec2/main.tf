@@ -22,7 +22,7 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    values = ["CentOS Linux 7 x86_64 HVM EBS ENA 2002_01*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
   }
 
   filter {
@@ -30,7 +30,7 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 
-  owners = ["679593333241"] # CentOS
+  owners = ["099720109477"] # Canonical
 }
 
 resource "aws_instance" "web" {
