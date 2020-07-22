@@ -4,8 +4,8 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "labtrack-dev-trackerpills-tfstate"
-    key    = "us-east-1/labtrack/dev/trackerpills/ami_padrao/terraform.tfstate"
+    bucket = "terraform-dev-basic-example-tfstate"
+    key    = "us-east-1/terraform/dev/basic-example/ami_padrao/terraform.tfstate"
     region = "us-east-1"
   }
 }
@@ -14,8 +14,8 @@ data "terraform_remote_state" "webserver" {
   backend = "s3"
 
   config = {
-    bucket = "labtrack-dev-trackerpills-tfstate"
-    key    = "us-east-1/labtrack/dev/trackerpills/webserver/terraform.tfstate"
+    bucket = "terraform-dev-basic-example-tfstate"
+    key    = "us-east-1/terraform/dev/basic-example/webserver/terraform.tfstate"
     region = "us-east-1"
   }
 }

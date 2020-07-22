@@ -6,11 +6,11 @@ provider "aws" {
 
 resource "aws_s3_bucket" "main" {
   // Aqui você define o pattern... Nesse exemplo é: time-ambiente-produto-aplicacao 
-  bucket = "labtrack-dev-trackerpills-tfstate"
+  bucket = "terraform-dev-basic-example-tfstate"
 
   tags = {
-    "time"      = "labtrack"
-    "produto"   = "trackerpills"
+    "time"      = "terraform"
+    "produto"   = "basic-example"
     "aplicacao" = "tfstate"
     "ambiente"  = "dev"
   }

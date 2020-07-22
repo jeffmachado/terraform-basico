@@ -1,6 +1,6 @@
 locals {
-  time      = "labtrack"
-  produto   = "trackerpills"
+  time      = "terraform"
+  produto   = "basic-example"
   aplicacao = "webserver"
   ambiente  = "dev"
 }

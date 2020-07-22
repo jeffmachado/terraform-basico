@@ -4,15 +4,15 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "labtrack-dev-trackerpills-tfstate"
-    key    = "us-east-1/labtrack/dev/trackerpills/webserver/terraform.tfstate"
+    bucket = "terraform-dev-basic-example-tfstate"
+    key    = "us-east-1/terraform/dev/basic-example/webserver/terraform.tfstate"
     region = "us-east-1"
   }
 }
 
 locals {
-  time      = "labtrack"
-  produto   = "trackerpills"
+  time      = "terraform"
+  produto   = "basic-example"
   aplicacao = "webserver"
   ambiente  = "dev"
 }
@@ -34,10 +34,13 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "web" {
+  ############# OBS
+  # Recomendo análise das AMIs antes de implantar em seu ambiente.
+  
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.nano"
 
-  key_name = "trackerpills"
+  key_name = "basic-example"
 
   tags = {
     "time"      = local.time
